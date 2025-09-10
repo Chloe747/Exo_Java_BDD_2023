@@ -27,6 +27,16 @@
 
 <h2>Exercice 1 : Le carré d'étoiles</h2>
 <p>Ecrire le code afin de produire un carré d'étoile</p>
+<% String valeur = request.getParameter("valeur"); %>
+<% if (valeur != null && !valeur.isEmpty()) { %>
+ <%int cpt = Integer.parseInt(valeur); %>
+<% for (int i = 1; i <= cpt; i++) { %>
+    <p>
+    <% for (int j = 1; j <= cpt; i++) { %>
+       <%= "*" %>
+    <% } %>
+    </p>
+<% } %>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>*****</br>*****</br>*****</br>*****</br>*****</p>
 
