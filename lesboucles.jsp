@@ -47,8 +47,8 @@
             <p>
             <% for (int j = 1; j <= i; j++) { %>
                 <%= "*" %>
-            <% } %>
-            </p>
+    <% } %>
+    </p>
 
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>*</br>**</br>***</br>****</br>*****</p>
