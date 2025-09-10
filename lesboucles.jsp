@@ -18,13 +18,13 @@
 <% if (valeur != null && !valeur.isEmpty()) { %>
 
 <%-- Boucle for pour afficher une ligne d'étoiles --%>
-    <%int cpt = Integer.parseInt(valeur); %>
-    <p>
-    <% for (int i = 1; i <= cpt; i++) { %>
-       <%= "*" %>
+<%int cpt = Integer.parseInt(valeur); %>
+        <p>
+        <% for (int i = 1; i <= cpt; i++) { %>
+           <%= "*" %>
+        <% } %>
+        </p>
     <% } %>
-    </p>
-<% } %>
 
 <h2>Exercice 1 : Le carré d'étoiles</h2>
 <p>Ecrire le code afin de produire un carré d'étoile</p>
