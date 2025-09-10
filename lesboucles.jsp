@@ -35,7 +35,7 @@
            <%= "*" %>
     <% } %>
     </p>
-<% } %>
+
 
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>*****</br>*****</br>*****</br>*****</br>*****</p>
