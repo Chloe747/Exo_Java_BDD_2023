@@ -133,7 +133,6 @@
     <p><%= cpt %> x <%= i %> = <%= cpt * i %></p>
 <% } %>
 
-<% } %>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>5 x 1 = 5</p>
 <p>5 x 2 = 10</p>
