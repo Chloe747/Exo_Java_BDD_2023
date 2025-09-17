@@ -90,7 +90,7 @@ pluvieux</p>
        out.print(chaine.charAt(i));
    }
 %>
-
+</br>
 Exemple : L'hiver sera pluvieux</br>
 Lhvrsr lvex</p>
 
@@ -101,7 +101,7 @@ Lhvrsr lvex</p>
    StringBuilder inverse = new StringBuilder(chaine);
    out.print(inverse.reverse().toString());
 %>
-
+</br>
 Exemple : L'hiver sera pluvieux</br>
 xueivulp ares revih'l</p>
 
