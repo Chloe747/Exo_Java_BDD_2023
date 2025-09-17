@@ -36,7 +36,7 @@
 <p>Ecrire un programme pour compter le nombre de lettre e dans votre chaine de charactères</p>
 
 <%  int compteurE = 0;
-    int longueurchaine = chaine.length() 
+    int longueurchaine = chaine.length();
     for (int i = 0; longueurchaine; i++){
         if (chaine.charAt(i) == 'e') {
             compteurE++;
@@ -68,6 +68,16 @@ r</p>
 
 <h2>Exercice 3 : Retour à la ligne</h2>
 <p>La présence d'un espace provoque un retour à la ligne </br>
+
+<%
+        String[] mots = chaine.split(" ");
+        for (String mot : mots) {
+    %>
+        <%= mot %><br/>
+    <%
+        }
+    %>
+
 Exemple : L'hiver sera pluvieux</br>
 L'hiver</br>
 sera</br>
