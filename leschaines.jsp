@@ -37,7 +37,7 @@
 
 <%  int compteurE = 0;
     int longueurchaine = chaine.length();
-    for (int i = 0; longueurchaine; i++){
+    for (int i = 0; i < longueurchaine; i++){
         if (chaine.charAt(i) == 'e') {
             compteurE++;
         }
