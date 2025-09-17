@@ -88,6 +88,7 @@ pluvieux</p>
 for (int i = 0; i < chaine.length(); i+=2) {
      char lettresurdeux = chaine.charAt(i);
 }
+<p>La chaine de caractere est <%= lettresurdeux %></p>
 %>
 
 Exemple : L'hiver sera pluvieux</br>
