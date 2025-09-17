@@ -8,9 +8,9 @@
 
 <!-- Un seul formulaire pour tout -->
 <form action="#" method="post">
-    <p>Saisir la valeur 1 (A) : <input type="text" name="valeur1">
-    <p>Saisir la valeur 2 (B) : <input type="text" name="valeur2">
-    <p>Saisir la valeur 3 (C) : <input type="text" name="valeur3">
+    <p>Saisir la valeur A : <input type="text" name="valeur1">
+    <p>Saisir la valeur B : <input type="text" name="valeur2">
+    <p>Saisir la valeur C : <input type="text" name="valeur3">
     <p><input type="submit" value="Vérifier">
 </form>
 
@@ -23,18 +23,21 @@ if (valeur1 != null && valeur2 != null && !valeur1.isEmpty() && !valeur2.isEmpty
     int intValeur1 = Integer.parseInt(valeur1);
     int intValeur2 = Integer.parseInt(valeur2);
 
-    // Exercice 0 : Comparaison 2 valeurs
+    // Comparaison simple entre 2 valeurs
+%>
+    <h2>Comparaison de deux valeurs</h2>
+<%
     if (intValeur1 > intValeur2) {
 %>
-        <p>Valeur 1 est supérieure à Valeur 2.</p>
+        <p>Valeur 1 (<%= intValeur1 %>) est supérieure à Valeur 2 (<%= intValeur2 %>).</p>
 <%
     } else if (intValeur1 < intValeur2) {
 %>
-        <p>Valeur 1 est inférieure à Valeur 2.</p>
+        <p>Valeur 1 (<%= intValeur1 %>) est inférieure à Valeur 2 (<%= intValeur2 %>).</p>
 <%
     } else {
 %>
-        <p>Valeur 1 est égale à Valeur 2.</p>
+        <p>Valeur 1 (<%= intValeur1 %>) est égale à Valeur 2 (<%= intValeur2 %>).</p>
 <%
     }
 }
@@ -45,8 +48,14 @@ if (valeur1 != null && valeur2 != null && valeur3 != null
     int A = Integer.parseInt(valeur1);
     int B = Integer.parseInt(valeur2);
     int C = Integer.parseInt(valeur3);
+%>
 
-    // Exercice 1 : C entre A et B
+    <h2>Exercice 1 : Comparaison 1</h2>
+    <p>Ecrire un programme qui demande à l'utilisateur de saisir 3 valeurs (A, B et C) 
+    et dites-nous si la valeur de C est comprise entre A et B.</p>
+
+<%
+    // Comparaison : C entre A et B
     if ((C >= A && C <= B) || (C >= B && C <= A)) {
 %>
         <p>Oui, C = <%= C %> est compris entre A = <%= A %> et B = <%= B %>.</p>
@@ -56,8 +65,18 @@ if (valeur1 != null && valeur2 != null && valeur3 != null
         <p>Non, C = <%= C %> n'est pas compris entre A = <%= A %> et B = <%= B %>.</p>
 <%
     }
+%>
+    <p><b>Exemple :</b><br/>
+    A = 10<br/>
+    B = 20<br/>
+    C = 15<br/>
+    Oui, C est compris entre A et B</p>
 
-    // Exercice 2 : Pair ou impair ?
+    <h2>Exercice 2 : Pair ou Impair ?</h2>
+    <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if.</p>
+
+<%
+    // Vérification pair/impair
     if (C % 2 == 0) {
 %>
         <p>C = <%= C %> est pair.</p>
@@ -67,6 +86,11 @@ if (valeur1 != null && valeur2 != null && valeur3 != null
         <p>C = <%= C %> est impair.</p>
 <%
     }
+%>
+    <p><b>Exemple :</b><br/>
+    C = 12 → Pair<br/>
+    C = 7 → Impair</p>
+<%
 }
 %>
 
