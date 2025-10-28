@@ -28,7 +28,7 @@
     int premier = Integer.parseInt(tableauDeChiffres[0]);
     int carre_premier = premier*premier;
 %>
-<p>Le carré de la première valeur (<%= premier %>) est : <%= carre %></p>
+<p>Le carré de la première valeur (<%= premier %>) est : <%= carre_premier %></p>
 
 <h2>Exercice 2 : La somme des 2 premières valeurs</h2>
 <p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
