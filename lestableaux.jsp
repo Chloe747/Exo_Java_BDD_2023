@@ -38,7 +38,7 @@
     int deuxieme = Integer.parseInt(tableauDeChiffres[1]);
     int somme = premier + deuxieme;
 %>
-<p>Le somme des deux premiere valeur est  : <%= somme %></p>
+<p>La somme des deux premiere valeur est  : <%= somme %></p>
 
 
 <h2>Exercice 3 : La somme de toutes les valeurs</h2>
