@@ -47,7 +47,7 @@ Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'ut
 
 int somme1=0;
 for (int i=0, i<tableauDeChiffres.length, i++){
-    somme1 += Interger;parse.Int(tableauDeChiffre[i]);
+    somme1 += Interger.parse.Int(tableauDeChiffre[i]);
 }
 <p>La somme des valeurs du tableau est  : <%= somme1 %></p>
 
