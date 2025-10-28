@@ -44,11 +44,12 @@
 <h2>Exercice 3 : La somme de toutes les valeurs</h2>
 <p>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</br>
 Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'utilisateur</p>
-
+<%
 int somme1=0;
 for (int i=0, i<tableauDeChiffres.length, i++){
     somme1 += Interger.parse.Int(tableauDeChiffres[i]);
 }
+%>
 <p>La somme des valeurs du tableau est  : <%= somme1 %></p>
 
 <h2>Exercice 4 : La valeur maximum</h2>
