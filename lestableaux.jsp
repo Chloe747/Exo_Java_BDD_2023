@@ -25,7 +25,7 @@
 <p>Ecrire un programme afin d'afficher le carré de la première valeur</p>
 
 <% 
-    int premier = Integer.parseInt(tableauDeChiffre[0]);
+    int premier = Integer.parseInt(tableauDeChiffres[0]);
     int carre_premier = premier*premier;
 %>
 
