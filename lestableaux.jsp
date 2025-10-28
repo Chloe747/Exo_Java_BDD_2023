@@ -33,6 +33,14 @@
 <h2>Exercice 2 : La somme des 2 premières valeurs</h2>
 <p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
 
+<% 
+    int premier = Integer.parseInt(tableauDeChiffres[0]);
+    int deuxieme = Integer.parseInt(tableauDeChiffres[1]);
+    int somme = premier + deuxieme;
+%>
+<p>Le somme des deux premiere valeur est  : <%= somme %></p>
+
+
 <h2>Exercice 3 : La somme de toutes les valeurs</h2>
 <p>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</br>
 Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'utilisateur</p>
