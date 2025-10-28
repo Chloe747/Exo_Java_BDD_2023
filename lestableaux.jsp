@@ -45,9 +45,9 @@
 <p>L'utilisateur peut à présent saisir autant de valeurs qu'il le souhaite dans champs de saisie.</br>
 Ecrire un programme afin de faire la somme de toutes les valeurs saisie par l'utilisateur</p>
 
-int Somme=0;
+int somme1=0;
 for (int i=0, i<tableauDeChiffres.length, i++){
-    Somme += Interger;parse.Int(tableauDeChiffre[i])
+    somme1 += Interger;parse.Int(tableauDeChiffre[i]);
 }
 <p>La somme des valeurs du tableau est  : <%= Somme %></p>
 
