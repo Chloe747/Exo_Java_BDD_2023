@@ -34,7 +34,7 @@
 <p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
 
 <% 
-    int premier = Integer.parseInt(tableauDeChiffres[0]);
+    int premiere = Integer.parseInt(tableauDeChiffres[0]);
     int deuxieme = Integer.parseInt(tableauDeChiffres[1]);
     int somme = premier + deuxieme;
 %>
