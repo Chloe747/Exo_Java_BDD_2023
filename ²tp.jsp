@@ -10,7 +10,7 @@
 
 <%
 //--- Classe internet pour representer une tache ---
-Class Task {
+class Task {
   private String titre;
   private String description;
   private String echeance;
