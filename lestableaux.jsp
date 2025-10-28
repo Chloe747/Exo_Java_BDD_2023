@@ -24,6 +24,11 @@
 <h2>Exercice 1 : La carré de la première valeur</h2>
 <p>Ecrire un programme afin d'afficher le carré de la première valeur</p>
 
+<% 
+    int premier = Integer.parseInt(tableauDeChiffre[0])
+    intcarre_premier = premier*premier
+%>
+
 <h2>Exercice 2 : La somme des 2 premières valeurs</h2>
 <p>Ecrire un programme afin d'afficher la somme des deux premières valeurs</p>
 
