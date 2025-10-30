@@ -14,6 +14,7 @@
         // Déclaration des attributs de chaque tâche
         private int id; // Identifiant unique
         private String titre; // Titre de la tâche
+        private String description; // Description de la tache 
         private Date dateEcheance; // Date d’échéance
         private boolean terminee; // Indique si la tâche est terminée
 
@@ -21,6 +22,7 @@
         public Task(String titre, Date dateEcheance) {
             this.id = idCounter++; // Donne un ID unique à partir du compteur global
             this.titre = titre; // Enregistre le titre donné
+            this.description = description; // Enregistre la description donné
             this.dateEcheance = dateEcheance; // Enregistre la date d’échéance donnée
             this.terminee = false;  // Par défaut, la tâche est non terminée
         }
@@ -28,6 +30,7 @@
         // Getters : permettent d'accéder aux attributs
         public int getId() { return id; }
         public String getTitre() { return titre; }
+        public String getDescription() { return description; }
         public Date getDateEcheance() { return dateEcheance; }
         public boolean isTerminee() { return terminee; }
 
@@ -60,6 +63,7 @@
         if ("add".equals(action) && request.getMethod().equals("POST")) {
             // On récupère le titre et la date du formulaire
             String titre = request.getParameter("titre");
+            String description = request.getParameter("description");
             String dateStr = request.getParameter("dateEcheance");
             Date dateEcheance = null;
 
@@ -205,6 +209,15 @@
     li a.toggle { 
         color: #28a745;                 /* Couleur verte (succès/valide) */
     }
+
+    form textarea { 
+        width: 300px; 
+        padding: 8px; 
+    }
+
+    li small { 
+        color: #555; 
+    }
 </style>
 
 </head>
@@ -212,16 +225,20 @@
 
     <h1>Mon Gestionnaire de Tâches (v0.1 - avec date et état)</h1> <!-- En-tête principal -->
 
-    <%-- 
-      ÉTAPE 3 : VUE (Le Formulaire)
-      Formulaire permettant d’ajouter une tâche avec une date d’échéance
-    --%>
+    
     <form action="TP.jsp" method="post"> <!-- Envoi vers la même page -->
         <input type="hidden" name="action" value="add"> <!-- Définit l’action comme "add" -->
 
         <div>
             <label for="titre">Titre de la tâche :</label> <!-- Label pour le champ titre -->
             <input type="text" id="titre" name="titre" required> <!-- Champ texte obligatoire -->
+        </div>
+        
+        <br>
+
+        <div>
+            <label for="description">Description :</label>
+            <textarea id="description" name="description" rows="3"></textarea>
         </div>
 
         <br>
@@ -240,10 +257,7 @@
 
     <h2>Mes Tâches</h2> <!-- Titre de la section d’affichage -->
 
-    <%-- 
-      ÉTAPE 3 : VUE (L'Affichage)
-      Boucle sur la liste des tâches et affichage formaté
-    --%>
+   
     <ul>
     <% 
         // Si la liste est vide
@@ -263,9 +277,13 @@
         <!-- Affiche une tâche -->
         <li <%= cssClass %>>
         <%-- On met le texte dans un <span> pour le style --%>
+
         <span>
             <strong><%= tache.getTitre() %></strong> 
-            (Pour le : <%= sdfDisplay.format(tache.getDateEcheance()) %>)
+            <br>
+            <small><%= tache.getDescription() %></small> 
+            <br>
+            <small>(Pour le : <%= sdfDisplay.format(tache.getDateEcheance()) %>)</small>
         </span>
 
         <div>
