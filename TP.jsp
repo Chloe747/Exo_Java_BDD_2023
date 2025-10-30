@@ -28,7 +28,7 @@
         }
 
         // Redirection vers la page principale pour éviter le repost avec F5
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("TP.jsp");
         return; // Stoppe l'exécution ici (important)
     }
 %>
@@ -37,7 +37,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!-- Définit l'encodage du document -->
-    <title>Mini Tâches v0.1</title> <!-- Titre de l'onglet -->
+    <title>Gestionnaire Tâches </title> <!-- Titre de l'onglet -->
 </head>
 <body>
 
