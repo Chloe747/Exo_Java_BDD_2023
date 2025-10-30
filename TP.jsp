@@ -75,11 +75,13 @@
                         dateEcheance = null; // Sécurité en cas d'erreur
                     }
                 }
-
+                    
+                    // On redirige et on arrête
+                    response.sendRedirect("TP.jsp"); // Utilise le bon nom de fichier
+                    return;
+                }
                 // On ajoute la tâche MÊME SI la date est null
                 if (titre != null && !titre.isEmpty()) {
-                    
-                    // CORRECTION 2 : On met une virgule "," et non un point-virgule ";"
                     taskList.add(new Task(titre, dateEcheance, description));
                 }
                 
@@ -227,7 +229,7 @@
 </head>
 <body>
 
-    <h1>Mon Gestionnaire de Tâches (v0.1 - avec date et état)</h1> <!-- En-tête principal -->
+    <h1>Mon Gestionnaire de Tâches </h1> <!-- En-tête principal -->
 
     
     <form action="TP.jsp" method="post"> <!-- Envoi vers la même page -->
@@ -249,7 +251,7 @@
 
         <div>
             <label for="dateEcheance">Date d'échéance :</label> <!-- Label pour la date -->
-            <input type="date" id="dateEcheance" name="dateEcheance"> <!-- Sélecteur de date obligatoire -->
+            <input type="date" id="dateEcheance" name="dateEcheance"> <!-- Sélecteur de date -->
         </div>
 
         <br>
