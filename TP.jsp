@@ -258,25 +258,25 @@
             // Parcourt toutes les tâches
             for (Task tache : taskList) {
                 // Si la tâche est terminée, on applique un style visuel différent
-                String style = tache.isTerminee() ? "text-decoration: line-through; color: grey;" : "";
+                String cssClass = tache.isTerminee() ? "class='completed'" : "";
     %>
         <!-- Affiche une tâche -->
-        <li style="<%= style %>">
-            <!-- Affiche le titre de la tâche -->
+        <li <%= cssClass %>>
+        <%-- On met le texte dans un <span> pour le style --%>
+        <span>
             <strong><%= tache.getTitre() %></strong> 
-            <!-- Affiche la date d’échéance formatée -->
             (Pour le : <%= sdfDisplay.format(tache.getDateEcheance()) %>)
-            
-            <!-- Lien pour changer l’état (terminer / ré-ouvrir) -->
-            <a href="TP.jsp?action=toggle&id=<%= tache.getId() %>">
-                [<%= tache.isTerminee() ? "Ré-ouvrir" : "Terminer" %>]
-            </a>
+        </span>
 
-            <!-- Lien pour supprimer la tâche -->
-            <a href="TP.jsp?action=delete&id=<%= tache.getId() %>">
-                [Supprimer]
+        <div>
+            <a href="index.jsp?action=toggle&id=<%= tache.getId() %>" class="toggle">
+                <%= tache.isTerminee() ? "Ré-ouvrir" : "Terminer" %>
             </a>
-        </li>
+            <a href="index.jsp?action=delete&id=<%= tache.getId() %>">
+                Supprimer
+            </a>
+        </div>
+    </li>
     <%
             } // Fin de la boucle for
         } // Fin du else
