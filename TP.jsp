@@ -269,10 +269,10 @@
         </span>
 
         <div>
-            <a href="index.jsp?action=toggle&id=<%= tache.getId() %>" class="toggle">
+            <a href="TP.jsp?action=toggle&id=<%= tache.getId() %>" class="toggle">
                 <%= tache.isTerminee() ? "Ré-ouvrir" : "Terminer" %>
             </a>
-            <a href="index.jsp?action=delete&id=<%= tache.getId() %>">
+            <a href="TP.jsp?action=delete&id=<%= tache.getId() %>">
                 Supprimer
             </a>
         </div>
