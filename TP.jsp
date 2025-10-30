@@ -26,7 +26,7 @@
         if (titre != null && !titre.isEmpty()) {
             taskTitles.add(titre); // Ajoute le titre à la liste des tâches
         }
-
+    }
         // 3. Traiter la suppression
     if ("delete".equals(action)) { // Vérifie si l'action demandée est "delete"
     try {
