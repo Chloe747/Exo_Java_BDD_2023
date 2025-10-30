@@ -119,7 +119,94 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!-- Définit l’encodage du document -->
-    <title>Mini Tâches v0.1</title> <!-- Titre de la page -->
+    <title>Mini Tâches </title> <!-- Titre de la page -->
+<style>
+    /* Style général du corps de la page */
+    body { 
+        font-family: Arial, sans-serif; /* Police simple et lisible */
+        background-color: #f4f4f4;      /* Couleur de fond gris clair */
+        margin: 20px;                   /* Marge extérieure autour du contenu */
+    }
+
+    /* Titres principaux et secondaires */
+    h1, h2 { 
+        color: #333;                    /* Couleur du texte gris foncé */
+    }
+
+    /* Style du formulaire d’ajout de tâche */
+    form { 
+        background: #fff;               /* Fond blanc */
+        border: 1px solid #ddd;         /* Bordure grise claire */
+        padding: 15px;                  /* Espacement intérieur */
+        border-radius: 5px;             /* Coins légèrement arrondis */
+    }
+
+    /* Espacement entre les blocs à l’intérieur du formulaire */
+    form div { 
+        margin-bottom: 10px; 
+    }
+
+    /* Style pour les labels (textes descriptifs des champs) */
+    form label { 
+        display: block;                 /* Les labels s’affichent sur une ligne complète */
+        margin-bottom: 5px;             /* Petit espace entre le label et le champ */
+    }
+
+    /* Champs texte et date du formulaire */
+    form input[type="text"], form input[type="date"] { 
+        width: 300px;                   /* Largeur fixe des champs */
+        padding: 8px;                   /* Espacement intérieur pour le confort de saisie */
+    }
+
+    /* Bouton de soumission du formulaire */
+    form input[type="submit"] { 
+        background: #007bff;            /* Couleur bleue typique des boutons */
+        color: white;                   /* Texte blanc */
+        padding: 10px;                  /* Taille du bouton */
+        border: none;                   /* Supprime la bordure par défaut */
+    }
+
+    /* Liste des tâches (ul) */
+    ul { 
+        list-style-type: none;          /* Supprime les puces */
+        padding-left: 0;                /* Enlève la marge à gauche */
+    }
+
+    /* Élément individuel de la liste (chaque tâche) */
+    li {
+        background: #fff;               /* Fond blanc */
+        border: 1px solid #ddd;         /* Bordure grise claire */
+        padding: 15px;                  /* Espacement intérieur */
+        margin-bottom: 10px;            /* Espace entre les tâches */
+        display: flex;                  /* Affichage flexible pour aligner le contenu */
+        justify-content: space-between; /* Sépare le titre à gauche et les liens à droite */
+        align-items: center;            /* Centre verticalement les éléments */
+    }
+
+    /* Classe appliquée aux tâches terminées */
+    li.completed { 
+        background: #e9e9e9;            /* Fond gris clair pour indiquer la complétion */
+    }
+
+    /* Le texte d’une tâche terminée est barré et grisé */
+    li.completed span { 
+        text-decoration: line-through;  /* Texte barré */
+        color: #888;                    /* Couleur grise */
+    }
+
+    /* Style des liens (Supprimer, Terminer, etc.) */
+    li a { 
+        color: #dc3545;                 /* Couleur rouge (danger/suppression) */
+        text-decoration: none;          /* Supprime le soulignement */
+        margin-left: 10px;              /* Espacement entre les liens */
+    }
+
+    /* Lien pour marquer une tâche comme terminée ou ré-ouvrir */
+    li a.toggle { 
+        color: #28a745;                 /* Couleur verte (succès/valide) */
+    }
+</style>
+
 </head>
 <body>
 
