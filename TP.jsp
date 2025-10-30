@@ -67,19 +67,23 @@
             String dateStr = request.getParameter("dateEcheance");
             Date dateEcheance = null;
 
-            try {
-                dateEcheance = sdf.parse(dateStr); // Convertit le texte en objet Date
-            } catch (Exception e) {
-                // Si une erreur survient (mauvais format de date), on laisse la date à null
-            }
+              // On essaie de parser la date SEULEMENT si elle n'est pas vide
+                if (dateStr != null && !dateStr.isEmpty()) {
+                    try {
+                        dateEcheance = sdf.parse(dateStr);
+                    } catch (Exception e) { 
+                        dateEcheance = null; // Sécurité en cas d'erreur
+                    }
+                }
 
-            // Vérifie que le titre et la date sont valides avant d’ajouter la tâche
-            if (titre != null && !titre.isEmpty() && dateEcheance != null) {
-                taskList.add(new Task(titre, dateEcheance)); // Crée et ajoute une nouvelle tâche
-            }
-
-            // Redirection pour éviter un double envoi de formulaire (protection contre F5)
-            response.sendRedirect("TP.jsp");
+                // On ajoute la tâche MÊME SI la date est null
+                if (titre != null && !titre.isEmpty()) {
+                    
+                    // CORRECTION 2 : On met une virgule "," et non un point-virgule ";"
+                    taskList.add(new Task(titre, dateEcheance, description));
+                }
+                
+                response.sendRedirect("TP.jsp");
             return; // Stoppe le code ici
         }
         
@@ -231,7 +235,7 @@
 
         <div>
             <label for="titre">Titre de la tâche :</label> <!-- Label pour le champ titre -->
-            <input type="text" id="titre" name="titre" required> <!-- Champ texte obligatoire -->
+            <input type="text" id="titre" name="titre" required> <!-- Champs de texte obligatoire -->
         </div>
         
         <br>
@@ -245,7 +249,7 @@
 
         <div>
             <label for="dateEcheance">Date d'échéance :</label> <!-- Label pour la date -->
-            <input type="date" id="dateEcheance" name="dateEcheance" required> <!-- Sélecteur de date obligatoire -->
+            <input type="date" id="dateEcheance" name="dateEcheance"> <!-- Sélecteur de date obligatoire -->
         </div>
 
         <br>
@@ -283,7 +287,9 @@
             <br>
             <small><%= tache.getDescription() %></small> 
             <br>
-            <small>(Pour le : <%= sdfDisplay.format(tache.getDateEcheance()) %>)</small>
+            <small>
+                (Pour le : <%= (tache.getDateEcheance() == null) ? "Non définie" : sdfDisplay.format(tache.getDateEcheance()) %>)
+            </small>
         </span>
 
         <div>
