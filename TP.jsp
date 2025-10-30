@@ -46,7 +46,7 @@
     <%-- =============================
          FORMULAIRE D'AJOUT DE TÂCHE
        ============================= --%>
-    <form action="index.jsp" method="post"> <!-- Formulaire envoyé vers cette même page -->
+    <form action="TP.jsp" method="post"> <!-- Formulaire envoyé vers cette même page -->
         <input type="hidden" name="action" value="add"> <!-- Indique qu'il s'agit d'une action "add" -->
 
         <div>
