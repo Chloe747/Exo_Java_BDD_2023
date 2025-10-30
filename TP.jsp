@@ -41,7 +41,7 @@
 </head>
 <body>
 
-    <h1>Mon Gestionnaire de Tâches (v0.1 - Titre seulement)</h1> <!-- Titre principal -->
+    <h1>Mon Gestionnaire de Tâches</h1> <!-- Titre principal -->
 
     <%-- =============================
          FORMULAIRE D'AJOUT DE TÂCHE
