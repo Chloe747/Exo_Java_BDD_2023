@@ -27,10 +27,30 @@
             taskTitles.add(titre); // Ajoute le titre à la liste des tâches
         }
 
-        // Redirection vers la page principale pour éviter le repost avec F5
-        response.sendRedirect("TP.jsp");
-        return; // Stoppe l'exécution ici (important)
+        // 3. Traiter la suppression
+    if ("delete".equals(action)) { // Vérifie si l'action demandée est "delete"
+    try {
+        // Récupère le paramètre "id" envoyé depuis le lien ou le bouton de suppression
+        // et le convertit en entier (correspond à l'index de la tâche dans la liste)
+        int index = Integer.parseInt(request.getParameter("id"));
+
+        // Vérifie que l'index est valide (dans les bornes de la liste)
+        if (index >= 0 && index < taskTitles.size()) {
+            taskTitles.remove(index); // Supprime la tâche correspondante de la liste
+        }
+
+    } catch (Exception e) {
+        // Si l'ID n'est pas un nombre ou qu'une erreur survient, on ignore l'erreur
+        // Cela évite que la page plante à cause d'une mauvaise requête
     }
+
+    // Après la suppression, on redirige vers la page principale
+    // pour mettre à jour la liste et éviter les reposts
+    response.sendRedirect("TP.jsp");
+
+    return; // Stoppe immédiatement l'exécution du reste du code JSP
+}
+
 %>
 
 <!DOCTYPE html>
@@ -65,23 +85,43 @@
     <%-- =============================
          AFFICHAGE DE LA LISTE DE TÂCHES
        ============================= --%>
-    <ul>
-    <%
-        // Si la liste est vide, afficher un message
+   <ul> <!-- Début de la liste HTML non ordonnée pour afficher les tâches -->
+    <% 
+        // Vérifie si la liste des tâches est vide
         if (taskTitles.isEmpty()) {
     %>
+        <!-- Si la liste est vide, affiche un message -->
         <li>Vous n'avez aucune tâche.</li>
     <%
         } else {
-            // Sinon, parcourir et afficher chaque titre
-            for (String titreTache : taskTitles) {
+            // Si la liste contient des tâches :
+            // On utilise ici une boucle "for" avec un index numérique
+            // afin de pouvoir récupérer la position (index) de chaque tâche dans la liste.
+            for (int i = 0; i < taskTitles.size(); i++) {
+    
+                // Récupère le titre de la tâche actuelle à l'indice i
+                String titreTache = taskTitles.get(i);
     %>
-        <li><%= titreTache %></li> <!-- Affiche le titre de la tâche -->
+        <!-- Chaque tâche est affichée dans un élément de liste -->
+        <li>
+            <!-- Affiche le titre de la tâche -->
+            <%= titreTache %>
+    
+            <%-- 
+               Lien de suppression :
+               - Il renvoie vers la même page "TP.jsp"
+               - Il passe deux paramètres dans l'URL :
+                   action=delete → indique qu'on veut supprimer
+                   id=<%= i %>   → indique l'index de la tâche à supprimer
+               Exemple de lien généré : TP.jsp?action=delete&id=0
+            --%>
+            <a href="TP.jsp?action=delete&id=<%= i %>">[Supprimer]</a>
+        </li>
     <%
             } // Fin de la boucle for
         } // Fin du else
     %>
-    </ul>
+</ul> <!-- Fin de la liste HTML -->
 
 </body>
 </html>
